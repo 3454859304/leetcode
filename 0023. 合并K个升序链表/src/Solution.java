@@ -14,6 +14,30 @@ class ListNode {
  */
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        return null;
+        ListNode head = new ListNode(0, null);
+        ListNode temp=head;
+        while(true){
+            ListNode min=null;
+            int flag=-1;
+            for(int i=0;i<lists.length;i++){
+                if(lists[i]==null){
+                    continue;
+                }
+                if(min==null){
+                    min=lists[i];
+                    flag=i;
+                }else if(lists[i].val<min.val){
+                    min=lists[i];
+                    flag=i;
+                }
+            }
+            if(min==null){
+                return head.next;
+            }
+            temp.next=min;
+            temp=min;
+            lists[flag]=lists[flag].next;
+        }
     }
+
 }
