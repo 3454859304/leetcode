@@ -19,11 +19,13 @@ public class Solution {
             strings.add(sb.toString());
         }
         else {
+
             if(last>0){
                 sb.append('(');
                 generateByRecursion(strings, flag + 1, last - 1, sb);
                 sb.deleteCharAt(sb.length() - 1);
             }
+
             if (sb.length()<2 * flag) {
                 sb.append(')');
                 generateByRecursion(strings, flag, last, sb);
