@@ -12,5 +12,6 @@ public class Solution {
 
     public List<Integer> findSubstring(String s, String[] words) {
        //TODO 0030 串联所有单词的子串
+        return null;
     }
 }
