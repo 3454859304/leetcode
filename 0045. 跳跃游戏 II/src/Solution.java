@@ -2,11 +2,11 @@
  * 功能描述
  *
  * @author: PJY
- * @date: 2022年09月02日 15:23
+ * @date: 2022年09月08日 15:21
  */
 public class Solution {
-    public int trap(int[] height) {
-        //TODO hard
+    public int jump(int[] nums) {
+        //TODO medium
         return 0;
     }
 }
