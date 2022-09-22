@@ -14,25 +14,27 @@ import java.util.stream.Stream;
  */
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        //TODO medium
         ArrayList<List<Integer>> result = new ArrayList<>();
-        dfs(result,0,nums);
+        dfs(result,nums,0,nums.length);
         return result;
     }
 
-    private void dfs(ArrayList result, int idx,int[] nums) {
-        if(idx==nums.length){
-            ArrayList<Object> list = new ArrayList<>();
-            for(int i=0;i<nums.length;i++){
+    private void dfs(ArrayList result,int[] nums, int idx,int n) {
+        if(idx==n){
+            ArrayList list = new ArrayList<>();
+            for(int i=0;i<n;i++){
                 list.add(nums[i]);
             }
             result.add(list);
         }else{
-            for(int i=idx;i<nums.length;i++){
+            if(idx<n){
+                dfs(result,nums,idx+1,n);
+            }
+            for(int i=idx+1;i<n;i++){
                 int temp = nums[i];
                 nums[i]=nums[idx];
                 nums[idx]=temp;
-                dfs(result,idx+1,nums);
+                dfs(result,nums,idx+1,n);
                 nums[idx]=nums[i];
                 nums[i]=temp;
             }
