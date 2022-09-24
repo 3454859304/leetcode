@@ -6,7 +6,6 @@
  */
 public class Solution {
     public void rotate(int[][] matrix) {
-        //TODO medium
         int n= matrix.length;
         int temp ;
         for(int i= 0; i<n/2;i++){
